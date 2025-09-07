@@ -9,21 +9,21 @@ const reviews = [
     name: "Sarah Johnson",
     review:
       "Our stay was amazing! The staff was so friendly and the rooms were spotless. Highly recommend!",
-    img: "/events/events.jpeg",
+    img: "/events/events.webp",
   },
   {
     id: 2,
     name: "David Miller",
     review:
       "Best hotel experience ever. Great location, excellent amenities, and the spa was fantastic.",
-    img: "/events/events1.jpeg",
+    img: "/events/events1.webp",
   },
   {
     id: 3,
     name: "Emily Davis",
     review:
       "Perfect for a family vacation. The kids loved the pool, and we enjoyed the special offers.",
-    img: "/events/events2.jpeg",
+    img: "/events/events2.webp",
   },
 ];
 

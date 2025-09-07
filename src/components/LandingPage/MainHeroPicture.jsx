@@ -8,7 +8,7 @@ const HeroBanner = () => {
       className="relative h-[90vh] flex items-center justify-center bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('/Bhotel/hotelBackgound.jpeg')",
+          "url('/Bhotel/hotelBackgound.webp')",
       }}
     >
       {/* Overlay */}

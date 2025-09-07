@@ -2,12 +2,12 @@
 import React from "react";
 
 const galleryImages = [
-  "/hotel.jpeg",
-  "Bhotel/hotelBackgound.jpeg",
-  "/hotel.jpeg",
-  "/hotel3.jpeg",
-  "Bhotel/hotelBackgound2.jpeg",
-  "/hotel2.jpeg"
+  "/hotel.webp",
+  "Bhotel/hotelBackgound.webp",
+  "/hotel.webp",
+  "/hotel3.webp",
+  "Bhotel/hotelBackgound2.webp",
+  "/hotel2.webp"
 ];
 
 const GalleryPicPage = () => {

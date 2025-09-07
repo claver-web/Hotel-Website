@@ -12,15 +12,15 @@ const rooms = [{
   description:
     "Experience ultimate luxury in our Executive Suite with breathtaking ocean views, spacious living area, and premium amenities.",
   images: [
-    "/rooms/room1.jpeg",
-    "/Bhotel/hotelBackgound.jpeg",
-    "/dining/dining1.jpeg",
+    "/rooms/room1.webp",
+    "/Bhotel/hotelBackgound.webp",
+    "/dining/dining1.webp",
   ],
   galleryImages : [
-    "/bathroom/bathroom1.jpeg",
-    "/chef/chef.jpeg",
-    "/gym/gym.jpeg",
-    "/spa/spa1.jpeg",
+    "/bathroom/bathroom1.webp",
+    "/chef/chef.webp",
+    "/gym/gym.webp",
+    "/spa/spa1.webp",
     ],
   amenities: ["Free WiFi", "Swimming Pool Access", "Room Service", "Spa & Wellness"],
   policies: [
@@ -37,15 +37,15 @@ const rooms = [{
   description:
     "2Experience ultimate luxury in our Executive Suite with breathtaking ocean views, spacious living area, and premium amenities.",
   images: [
-    "/rooms/room2.jpeg",
-    "/Bhotel/hotelBackgound2.jpeg",
-    "/dining/dining2.jpeg",
+    "/rooms/room2.webp",
+    "/Bhotel/hotelBackgound2.webp",
+    "/dining/dining2.webp",
   ],
   galleryImages : [
-    "/bathroom/bathroom2.jpeg",
-    "/chef/chef2.jpeg",
-    "/gym/gym1.jpeg",
-    "/spa/spa2.jpeg",
+    "/bathroom/bathroom2.webp",
+    "/chef/chef2.webp",
+    "/gym/gym1.webp",
+    "/spa/spa2.webp",
     ],
   amenities: ["Free WiFi", "Swimming Pool Access", "Room Service", "Spa & Wellness"],
   policies: [
@@ -62,15 +62,15 @@ const rooms = [{
   description:
     "3Experience ultimate luxury in our Executive Suite with breathtaking ocean views, spacious living area, and premium amenities.",
   images: [
-    "/rooms/room3.jpeg",
-    "/Bhotel/hotelBackgound3.jpeg",
-    "/dining/dining3.jpeg",
+    "/rooms/room3.webp",
+    "/Bhotel/hotelBackgound3.webp",
+    "/dining/dining3.webp",
   ],
   galleryImages : [
-    "/bathroom/bathroom3.jpeg",
-    "/chef/chef3.jpeg",
-    "/gym/gym.jpeg",
-    "/spa/spa3.jpeg",
+    "/bathroom/bathroom3.webp",
+    "/chef/chef3.webp",
+    "/gym/gym.webp",
+    "/spa/spa3.webp",
     ],
   amenities: ["Free WiFi", "Swimming Pool Access", "Room Service", "Spa & Wellness"],
   policies: [
@@ -87,15 +87,15 @@ const rooms = [{
   description:
     "4Experience ultimate luxury in our Executive Suite with breathtaking ocean views, spacious living area, and premium amenities.",
     images: [
-    "/rooms/room1.jpeg",
-    "/Bhotel/hotelBackgound.jpeg",
-    "/dining/dining1.jpeg",
+    "/rooms/room1.webp",
+    "/Bhotel/hotelBackgound.webp",
+    "/dining/dining1.webp",
   ],
   galleryImages : [
-    "/bathroom/bathroom4.jpeg",
-    "/chef/chef.jpeg",
-    "/gym/gym1.jpeg",
-    "/spa/spa1.jpeg",
+    "/bathroom/bathroom4.webp",
+    "/chef/chef.webp",
+    "/gym/gym1.webp",
+    "/spa/spa1.webp",
     ],
   amenities: ["Free WiFi", "Swimming Pool Access", "Room Service", "Spa & Wellness"],
   policies: [

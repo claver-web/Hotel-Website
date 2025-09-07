@@ -3,10 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const galleryImages = [
-  "/gallery/hotel_gallery.jpeg",
-  "/gallery/hotel_gallery 2.jpeg",
-  "/gallery/hotel_gallery 3.jpeg",
-  "/gallery/hotel_gallery.jpeg",
+  "/gallery/hotel_gallery.webp",
+  "/gallery/hotel_gallery 2.webp",
+  "/gallery/hotel_gallery 3.webp",
+  "/gallery/hotel_gallery.webp",
 ];
 
 const GalleryPreview = () => {

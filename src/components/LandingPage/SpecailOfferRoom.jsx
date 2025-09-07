@@ -6,19 +6,19 @@ const offers = [
     id: 1,
     title: "Summer Getaway - 20% Off",
     description: "Book your summer vacation now and save 20% on deluxe rooms.",
-    image: "/rooms/room1.jpeg",
+    image: "/rooms/room1.webp",
   },
   {
     id: 2,
     title: "Weekend Escape - 15% Off",
     description: "Enjoy a short weekend stay with 15% discount on all suites.",
-    image: "/rooms/room4.jpeg",
+    image: "/rooms/room4.webp",
   },
   {
     id: 3,
     title: "Family Package",
     description: "Stay 3 nights in a family room and get the 4th night free.",
-    image: "/rooms/room11.jpeg",
+    image: "/rooms/room11.webp",
   },
 ];
 

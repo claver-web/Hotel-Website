@@ -10,7 +10,7 @@ const allRooms = [
     type: "Deluxe",
     capacity: 2,
     price: 2000,
-    image: "/rooms/room1.jpeg",
+    image: "/rooms/room1.webp",
     features: ["1 King Bed", "Free WiFi", "City View", "Breakfast Included"],
   },
   {
@@ -19,7 +19,7 @@ const allRooms = [
     type: "Suite",
     capacity: 3,
     price: 4000,
-    image: "/rooms/room8.jpeg",
+    image: "/rooms/room8.webp",
     features: ["1 King Bed", "Living Area", "Ocean View", "Complimentary Drinks"],
   },
   {
@@ -28,7 +28,7 @@ const allRooms = [
     type: "Family",
     capacity: 4,
     price: 2400,
-    image: "/rooms/room2.jpeg",
+    image: "/rooms/room2.webp",
     features: ["2 Queen Beds", "Free WiFi", "Balcony", "Kids Friendly"],
   },
   {
@@ -37,7 +37,7 @@ const allRooms = [
     type: "Single",
     capacity: 1,
     price: 1200,
-    image: "/rooms/room11.jpeg",
+    image: "/rooms/room11.webp",
     features: ["1 Single Bed", "Free WiFi", "City View"],
   },
 ];
