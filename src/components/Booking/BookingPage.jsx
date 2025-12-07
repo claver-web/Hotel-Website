@@ -1,32 +1,32 @@
 // BookingPage.jsx
-import React, { useState } from "react";
+import { useState, useContext} from "react";
+import CalanderOptimization from "../AtomicComp/CalanderOptimization";
+import BookingProvider, {BookingDetailsContext} from "../../Provider/BookingProvider";
 
 const BookingPage = () => {
-  const [formData, setFormData] = useState({
-    checkIn: "",
-    checkOut: "",
-    guests: 1,
-    roomType: "Deluxe",
-  });
+
+  const {BookingDetails, setBookingDetails} = useContext(BookingDetailsContext);
 
   const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setBookingDetails({ ...BookingDetails, [e.target.name]: e.target.value })
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(BookingDetails)
     // Here you’d send data to backend before payment
     const response = await fetch('http://127.0.0.1:3000', {
       method: "POSt",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({formData})
+      body: JSON.stringify({BookingDetails})
     });
     if(response.status == '200'){
       confirmPopup()
     }
-    // console.log("Booking Data:", formData);
+    // console.log("Booking Data:", BookingDetails);
   };
 
   const confirmPopup =() => {
@@ -38,50 +38,62 @@ const BookingPage = () => {
   return (
     <section className="py-16 bg-gray-50 text-gray-800">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+
         {/* Booking Form */}
-        <div className="md:col-span-2 bg-white shadow-lg rounded-lg p-8">
+        <div className="md:col-span-2 bg-white shadow-lg text-center rounded-lg p-8 w-full">
           <h2 className="text-3xl font-bold text-[#001f54] mb-6">
             Book Your Stay
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Check-in */}
-            <div>
-              <label className="block font-medium mb-2">Check-in</label>
-              <input
-                type="date"
-                name="checkIn"
-                value={formData.checkIn}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border rounded-md focus:outline-none"
-              />
-            </div>
 
-            {/* Check-out */}
-            <div>
-              <label className="block font-medium mb-2">Check-out</label>
-              <input
-                type="date"
-                name="checkOut"
-                value={formData.checkOut}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border rounded-md focus:outline-none"
-              />
-            </div>
+              <div className="flex justify-around w-full">
+
+                {/* Check-in */}
+                <div className="m-1">
+                  <label className="block font-medium mb-2 text-[#001f54]">Check-in</label>
+                  <CalanderOptimization
+                    name="checkIn"
+                    value={BookingDetails.checkIn}
+                    onChange={handleChange}
+                    classes="border border-gray-300 rounded-lg px-3 py-2 w-full 
+                   text-gray-700 focus:outline-none focus:ring-2 
+                   focus:ring-blue-500 focus:border-blue-500 
+                   bg-white shadow-sm"
+                  />
+                </div>
+                <br />
+
+                {/* Check-out */}
+                <div className="m-1">
+                  <label className="block font-medium mb-2 text-[#001f54]">Check-out</label>
+                  <CalanderOptimization
+                    name="checkOut"
+                    value={BookingDetails.checkOut}
+                    onChange={handleChange}
+                    classes="border border-gray-300 rounded-lg px-3 py-2 w-full
+                   text-gray-700 focus:outline-none focus:ring-2 
+                   focus:ring-blue-500 focus:border-blue-500 
+                   bg-white shadow-sm"
+                  />
+                </div>
+                <br />
+
+
+              </div>
 
             {/* Guests */}
             <div>
-              <label className="block font-medium mb-2">Guests</label>
+              <label className="block font-medium mb-2 text-[#001f54]">Guests</label>
               <input
                 type="number"
                 name="guests"
                 min="1"
                 max="6"
-                value={formData.guests}
+                value={BookingDetails.guests}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none"
+                className="border-2 border-gray-400 w-full px-4 py-2 
+                rounded-md focus:border-blue-500 focus:outline-none "
               />
             </div>
 
@@ -90,49 +102,27 @@ const BookingPage = () => {
               <label className="block font-medium mb-2">Room Type</label>
               <select
                 name="roomType"
-                value={formData.roomType}
+                value={BookingDetails.roomType}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none"
+                className="border-2 border-gray-400 w-full px-4 py-2 
+                rounded-md focus:border-blue-500 focus:outline-none "
               >
-                <option value="Deluxe">Deluxe</option>
-                <option value="Suite">Suite</option>
-                <option value="Family">Family</option>
-                <option value="Single">Single</option>
+                <option value="Deluxe"> Deluxe  </option>
+                <option value="Suite">  Suite   </option>
+                <option value="Family"> Family  </option>
+                <option value="Single"> Single  </option>
+
               </select>
             </div>
-
-            {/* Payment Section (Stripe/PayPal placeholder)
-            <div className="pt-4">
-              <h3 className="text-xl font-semibold mb-3 text-[#001f54]">
-                Payment
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Choose a payment method to confirm your booking:
-              </p>
-
-              <div className="flex gap-4">
-                <button
-                  type="button"
-                  className="flex-1 bg-[#001f54] text-white py-3 rounded-md hover:bg-[#003080] transition"
-                >
-                  Pay with Stripe
-                </button>
-                <button
-                  type="button"
-                  className="flex-1 bg-yellow-500 text-white py-3 rounded-md hover:bg-yellow-600 transition"
-                >
-                  Pay with PayPal
-                </button>
-              </div>
-            </div> */}
 
             {/* Submit */}
             <button
               type="submit"
-              className="w-full mt-6 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-md transition"
+              className="w-full mt-6 bg-blue-900 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition"
             >
               Confirm Booking
             </button>
+
           </form>
 
           {showPopup && (
@@ -143,20 +133,47 @@ const BookingPage = () => {
         </div>
 
         {/* Booking Summary */}
-        <div className="bg-white shadow-lg rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-[#001f54] mb-4">
-            Booking Summary
-          </h3>
-          <ul className="space-y-2 text-gray-700">
-            <li>Room Type: {formData.roomType}</li>
-            <li>Guests: {formData.guests}</li>
-            <li>Check-in: {formData.checkIn || "-"}</li>
-            <li>Check-out: {formData.checkOut || "-"}</li>
+        <div className="bg-white shadow-lg rounded-lg p-8 text-center">
+
+          <div>
+            <h3 className="text-2xl font-bold text-[#001f54] mb-4">
+              Booking Summary
+            </h3>
+          </div>
+
+          <div>
+          <ul className="space-y-7 text-[#001f54]">
+
+            <li className="flex justify-between border-b pb-1">
+              <span className="font-medium">Room Type:</span>
+              <span>{BookingDetails.roomType || "-"}</span>
+            </li>
+
+            <li className="flex justify-between border-b pb-1">
+              <span className="font-medium">Guests:</span>
+              <span>{BookingDetails.guests || "-"}</span>
+            </li>
+
+            <li className="flex justify-between border-b pb-1">
+              <span className="font-medium">Check-in:</span>
+              <span>{BookingDetails.checkIn || "-"}</span>
+            </li>
+
+            <li className="flex justify-between border-b pb-1">
+              <span className="font-medium">Check-out:</span>
+              <span>{BookingDetails.checkOut || "-"}</span>
+            </li>
+
           </ul>
+
+          </div>
+
           <p className="mt-6 text-xl font-semibold text-[#003080]">
-            Total: ${formData.roomType === "Suite" ? 220 : 120} / night
+            Total: {BookingDetails.roomType === "Suite" ? 220 : 1200} / night
           </p>
+
         </div>
+
       </div>
     </section>
   );

@@ -46,7 +46,7 @@ const RoomsWithFilters = () => {
 
   const [type, setType] = useState("All");
   const [capacity, setCapacity] = useState("All");
-  const [maxPrice, setMaxPrice] = useState(4000);
+  const [maxPrice, setMaxPrice] = useState(10000);
 
   const filteredRooms = allRooms.filter((room) => {
     const typeMatch = type === "All" || room.type === type;
@@ -137,9 +137,11 @@ const RoomsWithFilters = () => {
                     ))}
                   </ul>
 
-                  <button className="w-full bg-[#001f54] hover:bg-[#003080] text-white font-medium py-3 rounded-md transition">
-                    Book Now
-                  </button>
+                  <Link to={"/booking"}>
+                    <button className="w-full bg-[#001f54] hover:bg-[#003080] text-white font-medium py-3 rounded-md transition">
+                      Book Now
+                    </button>
+                  </Link>
 
                   <Link to={`/rooms/${room.id}` }> <button className="w-full bg-white text-blue font-medium py-3 rounded-md transition">
                     Room Details

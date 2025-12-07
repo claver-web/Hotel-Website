@@ -1,22 +1,18 @@
 // LandingBooking.jsx
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import BookingProvider, {BookingDetailsContext} from "../../Provider/BookingProvider";
 
 const LandingBooking = () => {
-  const [formData, setFormData] = useState({
-    checkIn: "",
-    checkOut: "",
-    roomType: "Deluxe",
-    guests: 1,
-  });
+
+  const {BookingDetails, setBookingDetails} = useContext(BookingDetailsContext);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setBookingDetails({ ...BookingDetails, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Booking Data:", formData);
-    // Navigate to booking page or trigger booking API
+    console.log(BookingDetails);
   };
 
   return (
@@ -34,7 +30,7 @@ const LandingBooking = () => {
             <input
               type="date"
               name="checkIn"
-              value={formData.checkIn}
+              value={BookingDetails.checkIn}
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border rounded-md focus:outline-none"
@@ -47,7 +43,7 @@ const LandingBooking = () => {
             <input
               type="date"
               name="checkOut"
-              value={formData.checkOut}
+              value={BookingDetails.checkOut}
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border rounded-md focus:outline-none"
@@ -59,7 +55,7 @@ const LandingBooking = () => {
             <label className="block font-medium mb-2">Room Type</label>
             <select
               name="roomType"
-              value={formData.roomType}
+              value={BookingDetails.roomType}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-md focus:outline-none"
             >
@@ -78,7 +74,7 @@ const LandingBooking = () => {
               name="guests"
               min="1"
               max="6"
-              value={formData.guests}
+              value={BookingDetails.guests}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-md focus:outline-none"
             />
